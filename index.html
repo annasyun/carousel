@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <article id="app">
+    <h2>내가 가게 될 그림같은 여행지는?</h2>
+    <ul class="list-item">
+        <li><img src="https://images.unsplash.com/photo-1567109629107-5345afdcbf9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+        <p>알프스 그자체 스위스</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80" alt="">
+        <p>센강에서 바게트 찹찹 프랑스</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1587526337209-3d8b1afcdb25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="">
+        <p>벽돌 감성 독일</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1567597435927-80055c207c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+        <p>궁전 여행 오스트리아</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1563120101-e81f7f8d68a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGh1bmdhcnl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+        <p>야경 맛집 헝가리</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+        <p>해산물 쫩쫩 포르투갈</p>
+        </li>
+        <li><img src="https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+        <p>아기자기 오스트리아</p>
+        </li>
+    </ul>
+</article>
+    <script>
+        const center = document.querySelector('.list-item');
+        const items = document.querySelectorAll('.list-item li');
+        const angle = 360 / items.length;
+        let currAngle = 0;
+
+        document.addEventListener('click', function (event) {
+
+            if (window.innerWidth / 2 < event.clientX) {
+                currAngle -= angle;
+            } else {
+                currAngle += angle;
+            }
+
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        })
+    </script>
+</body>
+</html>
